@@ -1,0 +1,38 @@
+<ion-content class="ion-padding">
+  <h1>Welcome,</h1>
+  <h3>Sign in to continue!</h3>
+
+  <form [formGroup]="formulario">
+    <!-- <app-input label="Email ID"></app-input>
+    <app-input label="Password" type="password"></app-input> -->
+
+    <ion-list>
+      <ion-item>
+        <ion-input formControlName="email" label="Email ID" labelPlacement="stacked" placeholder="Informe seu e-mail"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-input formControlName="password" label="Password" labelPlacement="floating" placeholder="Informe sua senha" type="Password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <a routerLink="/forgot" class="forgot-password-link">Forgot Password</a>
+
+    <!-- <app-button label="Login" (click)="selectByCondition()" routerLink="/forgot"></app-button> -->
+    <app-button label="Login" (click)="onLogin()"></app-button>
+
+    <app-icon-button icon="logo-google" label="Connect whit Google"></app-icon-button>
+
+    <ion-button (click)="unlockFAIO()">
+      <ion-icon name="finger-print-outline" size="large"></ion-icon>{{ msg }}
+    </ion-button>
+
+  </form>
+
+
+
+  <p class="footer-text">I'm a new user,<a routerLink="/register"> Sign up</a></p>
+
+</ion-content>

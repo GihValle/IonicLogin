@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./screens/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./home/home.module').then( m => m. HomePageModule)
   },
   {
     path: '',
@@ -12,18 +12,29 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    loadChildren: () => import('./screens/login/login.module').then( m => m.LoginPageModule)
-  },
-  {
     path: 'register',
-    loadChildren: () => import('./screens/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./screen/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'recover-password',
-    loadChildren: () => import('./screens/recover-password/recover-password.module').then( m => m.RecoverPasswordPageModule)
+    path: 'login',
+    loadChildren: () => import('./screen/login/login.module').then( m => m.LoginPageModule)
   },
-
+  {
+    path: 'forgot',
+    loadChildren: () => import('./screen/forgot/forgot.module').then( m => m.ForgotPageModule)
+  },
+  {
+    path: 'recover',
+    loadChildren: () => import('./screen/recover/recover.module').then( m => m.RecoverPageModule)
+  },
+  {
+    path: 'initial',
+    loadChildren: () => import('./screen/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'produto/:id',
+    loadChildren: () => import('./screen/produto/produto.module').then( m => m.ProdutoPageModule)
+  },
 ];
 
 @NgModule({

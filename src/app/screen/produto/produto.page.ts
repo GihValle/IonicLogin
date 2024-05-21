@@ -1,0 +1,77 @@
+import { AlertController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProdutosService } from 'src/app/services/produtos.service';
+
+@Component({
+  selector: 'app-produto',
+  templateUrl: './produto.page.html',
+  styleUrls: ['./produto.page.scss'],
+})
+export class ProdutoPage {
+  private _pk_produto: number = 0;
+
+  //VARIÁVEIS PARA ARMAZENAR INFORMAÇÕES DO PRODUTO
+  public categoria: string = '';
+  public cor: string = '';
+  public desc_produto: string = '';
+  public genero: string = '';
+  public img: string = '';
+  public marca: string = '';
+  public nome: string = '';
+  public sub_categoria: string = '';
+  public tamanho: string = '';
+  public valor: string = '';
+
+  constructor(
+    private _router: Router,
+    public AlertController: AlertController,
+    private _activatedRoute: ActivatedRoute,
+    private _produto: ProdutosService
+  ) {
+    if (window.localStorage.getItem('autorizado') != 'true') {
+      this.presentAlert('Ops,', 'Realize o login primeiro.');
+      this._router.navigate(['./login']);
+      return;
+    }
+    //PEGAR OS PARÂMETROS ENVIADOS NA ROTA
+    this._activatedRoute.params.subscribe((data: any) => {
+      this._pk_produto = data['id'];
+    });
+  }
+
+  ionViewWillEnter() {
+    this.getProduto(this._pk_produto);
+  }
+
+  getProduto(pk_produto: number) {
+    this._produto.getProduto(pk_produto).subscribe((data: any) => {
+      if (data['status'] == 'success') {
+        this.categoria = data['produto']['categoria'];
+        this.cor = data['produto']['cor'];
+        this.desc_produto = data['produto']['desc_produto'];
+        this.genero = data['produto']['genero'];
+        this.img = data['produto']['img'];
+        this.marca = data['produto']['marca'];
+        this.nome = data['produto']['nome'];
+        this.sub_categoria = data['produto']['sub_categoria'];
+        this.tamanho = data['produto']['tamanho'];
+        this.valor = data['produto']['valor'];
+      } else {
+        this.presentAlert('Ops!', 'Produto não encontrado');
+        this._router.navigate(['./home']);
+      }
+
+    });
+  }
+
+  async presentAlert(header: string, message: string) {
+    const alert = await this.AlertController.create({
+      header: header,
+      message: message,
+      buttons: ['Ok'],
+    });
+
+    await alert.present();
+  }
+}

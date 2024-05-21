@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-back-button slot="start" defaultHref="/home" color="white"></ion-back-button>
+    <ion-title>Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h2>{{nome}}</h2>
+  <ion-img src="https://ionicframework.com/docs/img/demos/card-media.png"></ion-img>
+  <p>{{desc_produto}}</p>
+
+  <h3>
+    <span>R$</span>
+    <ion-text color="primary">{{valor}}</ion-text>
+  </h3>
+
+  <ion-button color="primary">Adicionar ao Carrinho</ion-button>
+</ion-content>

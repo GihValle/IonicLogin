@@ -12,6 +12,6 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./screens/login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./screen/login/login.page').then( m => m.LoginPage)
   },
 ];
