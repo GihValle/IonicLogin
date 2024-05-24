@@ -4,12 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RegisterPageRoutingModule } from './register-routing.module';
+import { AccountPageRoutingModule } from './account-routing.module';
 
-import { RegisterPage } from './register.page';
+import { AccountPage } from './account.page';
 import { SharedModule } from 'src/app/components/shared.module';
-
-
 
 
 @NgModule({
@@ -17,10 +15,10 @@ import { SharedModule } from 'src/app/components/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    SharedModule,
+    AccountPageRoutingModule,
     ReactiveFormsModule,
-    RegisterPageRoutingModule,
+    SharedModule
   ],
-  declarations: [RegisterPage]
+  declarations: [AccountPage]
 })
-export class RegisterPageModule {}
+export class AccountPageModule {}

@@ -7,7 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { ForgotPageRoutingModule } from './forgot-routing.module';
 
 import { ForgotPage } from './forgot.page';
-import { SharedModule } from 'src/app/home/components/shared.moduel';
+import { SharedModule } from 'src/app/components/shared.module';
+
+
 
 @NgModule({
   imports: [

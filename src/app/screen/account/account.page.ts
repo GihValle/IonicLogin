@@ -6,10 +6,10 @@ import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+  templateUrl: './account.page.html',
+  styleUrls: ['./account.page.scss'],
 })
-export class RegisterPage {
+export class AccountPage {
 
   public formulario: FormGroup = this.FormBuilder.group({
     email: [null, [Validators.required, Validators.email]],

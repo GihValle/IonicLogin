@@ -11,6 +11,7 @@ import { LoginService } from './services/login.service';
 import { FingerprintAIO } from '@awesome-cordova-plugins/fingerprint-aio/ngx';
 import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
 import { SQLitePorter } from '@awesome-cordova-plugins/sqlite-porter/ngx';
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SQLitePorter } from '@awesome-cordova-plugins/sqlite-porter/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    SwiperModule
   ],
   providers: [
     {

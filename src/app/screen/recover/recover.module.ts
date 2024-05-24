@@ -7,7 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { RecoverPageRoutingModule } from './recover-routing.module';
 
 import { RecoverPage } from './recover.page';
-import { SharedModule } from 'src/app/home/components/shared.moduel';
+import { SharedModule } from 'src/app/components/shared.module';
+
+
 
 @NgModule({
   imports: [

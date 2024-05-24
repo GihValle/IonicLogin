@@ -47,16 +47,16 @@ export class ProdutoPage {
   getProduto(pk_produto: number) {
     this._produto.getProduto(pk_produto).subscribe((data: any) => {
       if (data['status'] == 'success') {
-        this.categoria = data['produto']['categoria'];
-        this.cor = data['produto']['cor'];
-        this.desc_produto = data['produto']['desc_produto'];
-        this.genero = data['produto']['genero'];
-        this.img = data['produto']['img'];
-        this.marca = data['produto']['marca'];
-        this.nome = data['produto']['nome'];
-        this.sub_categoria = data['produto']['sub_categoria'];
-        this.tamanho = data['produto']['tamanho'];
-        this.valor = data['produto']['valor'];
+        this.categoria = data['produtos']['categoria'];
+        this.cor = data['produtos']['cor'];
+        this.desc_produto = data['produtos']['desc_produto'];
+        this.genero = data['produtos']['genero'];
+        this.img = data['produtos']['img'];
+        this.marca = data['produtos']['marca'];
+        this.nome = data['produtos']['nome'];
+        this.sub_categoria = data['produtos']['sub_categoria'];
+        this.tamanho = data['produtos']['tamanho'];
+        this.valor = data['produtos']['valor'];
       } else {
         this.presentAlert('Ops!', 'Produto não encontrado');
         this._router.navigate(['./home']);
