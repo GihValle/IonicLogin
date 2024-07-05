@@ -1,0 +1,163 @@
+ion-header{
+  ion-toolbar{
+    .cabeca{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      ion-back-button{
+        color:  #E1C7BB;
+      }
+
+      img{
+        max-width: 100px;
+        height: auto;
+      }
+
+      ion-icon{
+        color:  #E1C7BB;
+      }
+    }
+  }
+}
+
+ion-content{
+  --padding-start: 2rem;
+  --padding-end: 2rem;
+  --color: black;
+  --ion-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  img{
+    margin-top: 1rem;
+    border-radius: 50px;
+  }
+
+  .produto {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+
+    h2{
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .preco{
+      display: flex;
+      align-items: center;
+
+      span{
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      ion-text {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .categoria{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
+
+    h5{
+      font-size: 0.8rem;
+      color: #BFB0A3;
+    }
+  }
+
+  p{
+    // text-align: justify;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .cor{
+    display: flex;
+    justify-content: space-between;
+
+    p{
+      color: #E1C7BB;
+    }
+  }
+
+  .tamanho{
+    display: flex;
+    justify-content: space-between;
+
+    p{
+      color: #E1C7BB;
+    }
+  }
+
+  .marca{
+    display: flex;
+    justify-content: space-between;
+
+    p{
+      color: #E1C7BB;
+    }
+  }
+
+  .adicionar{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 85% 15%;
+    height: 1rem;
+    padding-top: 1rem;
+
+    ion-button{
+      --background: #E1C7BB;
+      --background-hover: #E1C7BB;
+      --background-activated: #cebcb3;
+    }
+
+    ion-icon{
+      color: #E1C7BB;
+      text-align: end;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .quantidade{
+    display: flex;
+    justify-content: space-between;
+
+    .counter-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      border-radius: 2rem;
+      padding: 10px 20px;
+    }
+
+    button {
+      background-color: #fff;
+      border: none;
+      color: #E1C7BB;
+      font-size: 16px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    button:hover {
+      background: #e0e0e0;
+    }
+
+    span {
+      margin: 0 10px;
+      font-size: 16px;
+      color: #E1C7BB;
+    }
+  }
+
+}

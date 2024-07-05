@@ -1,0 +1,33 @@
+ion-header{
+  ion-toolbar{
+    .cabeca{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      ion-back-button{
+        color:  #E1C7BB;
+      }
+
+      img{
+        max-width: 100px;
+        height: auto;
+      }
+
+      ion-icon{
+        color:  #E1C7BB;
+      }
+    }
+  }
+}
+
+ion-content{
+  --ion-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --padding-top: -1rem;
+
+  h1{
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}

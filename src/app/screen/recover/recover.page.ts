@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './recover.page.html',
   styleUrls: ['./recover.page.scss'],
 })
-export class RecoverPage implements OnInit {
+export class RecoverPage {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

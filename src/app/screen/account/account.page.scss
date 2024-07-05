@@ -1,0 +1,155 @@
+ion-header{
+  ion-toolbar{
+    .cabeca{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      ion-back-button{
+        color:  #E1C7BB;
+      }
+
+      img{
+        max-width: 100px;
+        height: auto;
+      }
+
+      ion-icon{
+        color:  #E1C7BB;
+      }
+    }
+  }
+}
+
+ion-content{
+  --color: black;
+  --ion-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .div-input{
+    border: none;
+    color: #C4B6AA;
+  }
+
+  .div-input img{
+    transform: rotate(180deg);
+  }
+
+  .div-input input{
+    display: none;
+    width: 0%;
+  }
+
+  .icons-header{
+    width: 30px;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0rem;
+
+  }
+
+  .icons-header img{
+    height: 100%;
+  }
+
+  .active-header{
+    width: 100%;
+    display: flex;
+
+  }
+
+  .active-div-input{
+    border-radius: 100px;
+    border: 1px solid #E1C7BB;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    gap: 1rem;
+    padding: 1.5rem 0.5rem;
+    transition: width 0.5s;
+  }
+
+  .active-div-input img{
+    width: 30px;
+    height: 30px;
+  }
+
+  .active-input{
+    width: 100% !important;
+    display: block !important;
+    border: none;
+  }
+
+  .active-input:focus{
+      outline: none;
+  }
+
+  ion-footer{
+    border-radius: 10px 10px 0px 0px !important;
+  }
+
+  .div-divison{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30% auto;
+  }
+
+  .div-perfil{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .div-container{
+    background-color: #F9F9F9;
+    box-shadow: 0px 3px 15px #00000075;
+    border-radius: 25px 25px 0px 0px;
+    padding: 0.5rem;
+
+  }
+
+  .div-container h3{
+    text-align: center;
+  }
+
+  .button-exit{
+    width: 100%;
+    height: 50px;
+    border-radius: 100px;
+    margin: 1rem 0rem;
+
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+  }
+
+  .roud{
+    border-radius: 0px 0px 10px 10px;
+    background-color: white;
+  }
+
+  ion-button{
+    --background: #E1C7BB;
+    --background-hover: #E1C7BB;
+    --background-activated: #cebcb3;
+
+    display: block;
+    margin: 20px auto; /* Centraliza horizontalmente e adiciona margem acima/abaixo */
+    width: 150px; /* Define a largura do botão */
+    height: 40px; /* Define a altura do botão */
+    background-color: #d9b7a4; /* Altere conforme necessário */
+    color: white; /* Altere conforme necessário */
+    border-radius: 10px; /* Altere conforme necessário */
+    text-align: center; /* Centraliza o texto no botão */
+    line-height: 40px;
+  }
+}
+
+

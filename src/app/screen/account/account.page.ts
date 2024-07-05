@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { RegisterService } from 'src/app/services/register.service';
+import { ClientesService } from 'src/app/services/clientes/clientes.service';
+import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
   selector: 'app-register',
@@ -11,39 +12,38 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class AccountPage {
 
-  public formulario: FormGroup = this.FormBuilder.group({
-    email: [null, [Validators.required, Validators.email]],
-    senha: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
-    nome: [null, [Validators.required]],
-    cpf: [null, [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
-    tel: [null, [Validators.required]],
+  public formulario: FormGroup = this.formBuilder.group({
+    id: [window.localStorage.getItem('pk_cliente'), [Validators.required]],
+    nome:[null, [Validators.required]],
+    cpf:[null, [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+    nascimento:[null],
+    tel:[null, [Validators.required]],
+    email:[null, [Validators.required, Validators.email]],
+    senha:[null, [Validators.minLength(4), Validators.maxLength(10)]],
+    endereco:[null, [Validators.required]],
   })
 
   constructor(
-    public FormBuilder: FormBuilder,
+    public formBuilder: FormBuilder,
+    private _clientesService: ClientesService,
     public alertController: AlertController,
-    private _register: RegisterService,
     private _router: Router
-  ) { }
-
-  onRegister(){
-    console.log(this.formulario)
-    if (this.formulario.valid){
-      //Seguir com cadastro do cliente
-      this._register.postCliente(this.formulario.value).subscribe((data: any) => {
-        if(data['status'] == 'success'){
-          this.presentAlert('Oba', 'Seu cadastro foi realizado com sucesso')
-        } else{
-          this.presentAlert('Ops', data['Error'])
-        }
-
-        this._router.navigate(['/login']);
-      })
-    }
-    else{
-      //Solicitar preenchimento de campos corretamente
-      this.presentAlert('Ops', 'Por favor, preencha corretamente o formulário')
-    }
+  ) {
+    this._clientesService.getCliente(this.formulario.controls['id'].value)
+    .subscribe((data: any) => {
+      if(data['status'] == 'success'){
+        this.formulario.patchValue({
+          nome: data['clientes']['nome'],
+          cpf: data['clientes']['cpf'],
+          nascimento: data['clientes']['nascimento'],
+          tel: data['clientes']['tel'],
+          email: data['clientes']['email'],
+          endereco: data['clientes']['endereco']
+        })
+      } else{
+        this.presentAlert('Ops', data['Error'])
+      }
+    })
   }
 
   async presentAlert(header: string, message: string){
@@ -54,5 +54,17 @@ export class AccountPage {
     })
 
     await alert.present()
+  }
+
+  onSave(){
+    this._clientesService.putCliente(this.formulario.value)
+    .subscribe((data: any) => {
+      if(data['status'] == 'success'){
+        this.presentAlert('Oba!', 'Registro salvo com sucesso.')
+        this._router.navigate(['/home'])
+      } else{
+        this.presentAlert('Ops!', data['Error'])
+      }
+    })
   }
 }

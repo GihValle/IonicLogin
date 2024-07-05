@@ -1,41 +1,35 @@
+.background-css{
+  width: 100%;
+  height: 120px;
+  position: relative;
+}
+.bg1{
+  width: 100%;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+.bg2{
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  right: 0;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+.bg3{
+  width: 100%;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: 0;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
 * {
   margin: 0;
   padding: 0;
-}
-
-form {
-  margin-top: 6rem;
-
-  .forgot-password-link {
-      text-decoration: none;
-      display: inline-block;
-      width: 100%;
-      text-align: right;
-      font-weight: 600;
-      font-size: 14px;
-      color: #4a4a4a;
-  }
-
-  app-button{
-      display: block;
-      margin-top: 3rem;
-  }
-
-  ion-button{
-    --boxshadow: none;
-    --border-radius: 10px;
-    --background: linear-gradient(
-        90deg,
-        rgba(250,87,142,1) 0%,
-        rgba(254, 171, 142 , 1) 100%
-    );
-    display: block;
-    height: 48px;
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 0.5rem;
-    text-transform: initial;
-  }
 }
 
 .footer-text{
@@ -62,4 +56,135 @@ form {
       color: #939fba;
       font-weight: 600;
   }
+}
+
+.logo-login{
+  width: 100%;
+  display: grid;
+  grid-template-rows: 60% 40%;
+  row-gap: 1rem;
+}
+.logo-login img{
+  width: 70%;
+  margin: auto;
+}
+.logo-login h2{
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  margin: auto;
+}
+
+.forms-login{   
+  width: 100%;
+  background-color: #F9F9F9;
+  box-shadow: 0px 3px 15px #00000075;
+  border-radius: 25px 25px 0px 0px;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.ion-content{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 45% 55%;
+}
+.div-back{
+  display: grid;
+  grid-template-rows: 35% 65%;
+  height: 100%;
+  width: 100%;
+}
+
+.forms-login h3{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.forms-login input[type="email"], input[type="password"], input[type="text"]{
+  height: 50px;
+  background-color: #EEEEEE;
+  margin-top: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000075;
+  padding: 1rem;
+}
+.forms-login input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus{
+  border: none;
+  outline: none;
+}
+.check-container{
+  padding: 1rem 0rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.checkbox-style{
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+.checkbox-style span{
+  color: #0081FF;
+}
+.checkbox-style input{
+  width: 18px;
+  height: 18px;
+}
+.style-recover{
+  color: #0081FF;
+}
+
+.btn-login{
+  width: 100%;
+  height: 50px;
+  background-color: #E1C7BB;
+  border-radius: 100px;
+  font-size: 20px;
+  margin: 1rem 0rem;
+  box-shadow: 0px 3px 6px #00000075;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #000;
+  margin: 0 10px;
+}
+
+.separator span {
+  white-space: nowrap;
+}
+.login-apps{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.login-apps img{
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.082));
+}
+.create-account{
+  margin: 1.5rem 0rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-account span{
+  color: #0081FF;
 }

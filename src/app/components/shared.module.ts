@@ -7,9 +7,9 @@ import { IconButtonComponent } from "../icon-button/icon-button.component";
 
 @NgModule(
     {
-        declarations:[InputComponent, ButtonComponent, IconButtonComponent],
+        declarations:[InputComponent, ButtonComponent, IconButtonComponent ],
         imports:[CommonModule, IonicModule],
-        exports: [InputComponent, ButtonComponent, IconButtonComponent],
+        exports: [InputComponent, ButtonComponent, IconButtonComponent ],
         providers: [],
     }
 )

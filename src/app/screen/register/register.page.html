@@ -1,4 +1,63 @@
-<ion-content class="ion-padding">
+
+<ion-content>
+  <div class="ion-content">
+    <div class="div-back">
+      <div class="background-css">
+        <svg class="bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#6E564B" fill-opacity="1" d="M0,288L48,288C96,288,192,288,288,250.7C384,213,480,139,576,138.7C672,139,768,213,864,245.3C960,277,1056,267,1152,229.3C1248,192,1344,128,1392,96L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+        <svg class="bg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#6E564B" fill-opacity="1" d="M0,288L48,288C96,288,192,288,288,250.7C384,213,480,139,576,138.7C672,139,768,213,864,245.3C960,277,1056,267,1152,229.3C1248,192,1344,128,1392,96L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+        <svg class="bg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#a58d82" fill-opacity="1" d="M0,288L60,293.3C120,299,240,309,360,304C480,299,600,277,720,234.7C840,192,960,128,1080,96C1200,64,1320,64,1380,64L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+        <svg class="bg3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#E2CABF" fill-opacity="1" d="M0,256L60,218.7C120,181,240,107,360,112C480,117,600,203,720,234.7C840,267,960,245,1080,197.3C1200,149,1320,75,1380,37.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+      </div>
+      <div class="logo-login">
+        <img src="assets/icon/Logo2.png" alt="">
+        <h2>REALIZAR CADASTRO</h2>
+      </div>
+    </div>
+  
+    <form [formGroup]="formulario" class="forms-login">
+     <h3>Crie sua conta</h3> 
+      <input type="text" placeholder="Nome">
+      <input type="text" placeholder="CPF">
+      <input type="text" placeholder="Telefone">
+      <input type="email" placeholder="E-mail">
+      <input type="password" placeholder="Senha">
+      <div class="check-container">
+        <div class="checkbox-style">
+          <input type="checkbox" name="" id="">
+          <p>Para concluir, leia e aceite nossos <span>Termos de Uso e Política de Privacidade.</span></p>
+        </div>
+      </div>
+
+      <button class="btn-login">Criar Conta</button>
+    </form>
+  </div>
+
+</ion-content>
+
+<!-- <ion-list>
+  <ion-item>
+    <ion-input formControlName="email" label="Email ID" labelPlacement="stacked" placeholder="Informe seu e-mail"></ion-input>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-item>
+    <ion-input formControlName="password" label="Password" labelPlacement="floating" placeholder="Informe sua senha" type="Password"></ion-input>
+  </ion-item>
+</ion-list>
+
+<a routerLink="/forgot" class="forgot-password-link">Forgot Password</a>
+
+<app-button label="Login" (click)="selectByCondition()" routerLink="/forgot"></app-button> -->
+<!-- <app-button label="Login" (click)="onLogin()"></app-button>
+
+<app-icon-button icon="logo-google" label="Connect whit Google"></app-icon-button>
+
+<ion-button (click)="unlockFAIO()">
+  <ion-icon name="finger-print-outline" size="large"></ion-icon>{{ msg }}
+</ion-button> -->
+
+<!-- <ion-content class="ion-padding">
   <h1>Welcome,</h1>
   <h3>Sign up to continue!</h3>
 
@@ -18,7 +77,7 @@
 
     <ion-list>
       <ion-item>
-        <ion-input formControlName="tel" label="Telefone" labelPlacement="stacked" placeholder="(00) 00000-0000"></ion-input>
+        <ion-input formControlName="tel" label="Whatsapp" labelPlacement="stacked" placeholder="(00) 00000-0000"></ion-input>
       </ion-item>
     </ion-list>
 
@@ -40,4 +99,4 @@
 
   <p class="footer-text">I already have an account,<a routerLink="/register"> Sign in</a></p>
 
-</ion-content>
+</ion-content> -->

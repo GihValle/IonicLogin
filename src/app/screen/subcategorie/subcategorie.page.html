@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="cabeca">
+      <ion-back-button slot="start" text="Voltar" defaultHref="/home"></ion-back-button>
+      <img src="../../../assets/icon/logo.png">
+      <ion-icon slot="end" size="large" name="cart-outline" routerLink="/cart"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let subcategoria of subcategorias">
+        <ion-card>
+          <ion-card-content>
+            <ion-col>
+              <img [src]="subcategoria.img">
+              <p>{{ subcategoria.nome }}</p>
+            </ion-col>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,7 +1,8 @@
-import { DatabaseService } from './services/core/database.service';
+
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { DatabaseService } from './services/core/database.service';
 
 @Component({
   selector: 'app-root',
@@ -10,23 +11,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  public nome_cliente = window.localStorage.getItem('nome_cliente')
-
   constructor(
     private platform: Platform,
-    private db: DatabaseService,
-    private _router: Router) {
+    private db: DatabaseService) {
     this.initializeApp();
   }
 
   initializeApp(){
     this.platform.ready().then(()=>{
-      this.db.createOpenDatabase();
+      this.db.createDatabase();
     })
-  }
-
-  onLogout(){
-    window.localStorage.clear()
-    this._router.navigate(['/login'])
   }
 }

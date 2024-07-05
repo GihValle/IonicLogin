@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <div class="header-menu" [ngClass]="{'active-header': inputSelect}">
+
+    <div  class="icons-header div-input" [ngClass]="{'active-div-input': inputSelect}" >
+      <ion-icon size="large" name="search-outline" (click)="InputIsActive()" style="color: #e1c7bb;"></ion-icon>
+      <ion-input type="text" [ngClass]="{'active-input': inputSelect}" placeholder="Buscar Produto" (ionChange)="handleInput($event)" (keydown.enter)="onEnter()" [(ngModel)]="inputValue"></ion-input>
+    </div>
+
+
+    <img src="/assets/icon/logo.png" alt="" [ngClass]="{'off': inputSelect}" class="logo">
+    <div class="icons-header rigth-icon" [ngClass]="{'off': inputSelect}" >
+      <ion-icon size="large" name="cart-outline" style="color: #e1c7bb;" routerLink="/cart"></ion-icon>
+    </div>
+
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" id="main-content">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <swiper [slidesPerView]="1">
+    <ng-template swiperSlide *ngFor="let banner of banners"><img [src]="banner.img"></ng-template>
+  </swiper>
+
+
+  <div class="category-icons">
+    <div class="category-icon active">
+      <img src="../../assets/icon/camisa.png">
+    </div>
+
+    <div class="category-icon">
+      <img src="../../assets/icon/vestir (1).png">
+    </div>
+
+    <div class="category-icon">
+      <img src="../../assets/icon/unissex.png">
+    </div>
+  </div>
+
+  <!-- <swiper [slidesPerView]="4">
+    <ng-template swiperSlide *ngFor="let categoria of categorias">
+      <ion-avatar>
+        <img [src]="categoria.img">
+      </ion-avatar>
+      <ion-text>
+        {{ categoria.categoria }}
+      </ion-text>
+    </ng-template>
+  </swiper> -->
+
+  <div class="infos">
+    <span class="active">Plus Size</span>
+    <span>For You</span>
+    <span>Em Alta</span>
+    <span>Novos</span>
+  </div>
+
+  <div class="products-container">
+    <h1>Produtos</h1>
+
+    <div class="products-content" >
+      <div class="div-product" *ngFor="let produto of produtos" (click)="getProduto(produto.pk_produto)" >
+        <div class="product-img">
+          <img src="https://g1a.com.br/fashion/{{produto.img}}" alt="">
+        </div>
+        <div class="produc-infos">
+          <h2>{{ produto.nome }}</h2>
+          <span>R$ {{ produto.valor }}</span>
+          <div class="product-buttons">
+            <button>Comprar</button>
+            <ion-icon size="large" name="heart-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let produto of produtos" (click)="getProduto(produto.pk_produto)">
+        <ion-card>
+          <img [alt]="produto.nome" src="http://localhost:8000/{{produto.img}}" />
+          <ion-card-header>
+            <ion-card-title>{{ produto.nome }}</ion-card-title>
+            <ion-card-subtitle>{{ produto.categoria }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-button>Add. ao Carrinho</ion-button>
+          <ion-icon size="medium" name="heart-outline"></ion-icon>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>

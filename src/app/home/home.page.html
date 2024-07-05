@@ -1,47 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+<!-- <ion-menu-toggle>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item routerLink="/account">{{ nome_cliente }}</ion-item>
+        <ion-item (click)="onLogout()">Sair</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+</ion-menu-toggle> -->
 
-    <ion-title>
-      Página Inicial
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
 
-<ion-content class="ion-padding">
+    <ion-tab-button class="icon-menu active" tab="principal">
+      <ion-icon size="large" name="home-outline"></ion-icon>
+      <span>HOME</span>
+    </ion-tab-button>
 
-  <swiper [slidesPerView]="1">
-    <ng-template swiperSlide *ngFor="let banner of banners"><img [src]="banner.img"></ng-template>
-  </swiper>
+    <ion-tab-button class="icon-menu" tab="subcategorie">
+      <ion-icon size="large" name="apps-outline"></ion-icon>
+      <span>CATEGORIA</span>
+    </ion-tab-button>
 
-  <swiper [slidesPerView]="4">
-    <ng-template swiperSlide *ngFor="let categoria of categorias">
-      <ion-avatar>
-        <img [src]="categoria.img">
-      </ion-avatar>
-      <ion-text>
-        {{ categoria.categoria }}
-      </ion-text>
-    </ng-template>
-  </swiper>
+    <ion-tab-button class="icon-menu" tab="notification">
+      <ion-icon size="large"  name="notifications-outline"></ion-icon>
+      <span>LEMBRETE</span>
+    </ion-tab-button>
 
-  <ion-grid>
-    <ion-row>
+    <ion-tab-button class="icon-menu" tab="favorite">
+      <ion-icon size="large" name="heart-outline"></ion-icon>
+      <span>FAVORITOS</span>
+    </ion-tab-button>
 
-      <ion-col size="6" *ngFor="let produto of produtos" (click)="getProduto(produto.pk_produto)">
-        <ion-card>
-          <img [alt]="produto.nome" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <ion-card-header>
-            <ion-card-title>{{ produto.nome }}</ion-card-title>
-            <ion-card-subtitle>{{ produto.categoria }}</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
+    <ion-tab-button class="icon-menu" tab="account">
+      <ion-icon size="large" name="person-outline"></ion-icon>
+      <span>PERFIL</span>
+    </ion-tab-button>
 
-    </ion-row>
-  </ion-grid>
-
-</ion-content>
+  </ion-tab-bar>
+</ion-tabs>

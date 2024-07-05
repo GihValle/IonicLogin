@@ -1,7 +1,7 @@
-import { AlertController } from '@ionic/angular';
+import { AlertController, IonIcon } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProdutosService } from 'src/app/services/produtos.service';
+import { ProdutosService } from 'src/app/services/produtos/produtos.service';
 
 @Component({
   selector: 'app-produto',
@@ -23,6 +23,8 @@ export class ProdutoPage {
   public tamanho: string = '';
   public valor: string = '';
 
+  count: number = 10;
+
   constructor(
     private _router: Router,
     public AlertController: AlertController,
@@ -38,6 +40,18 @@ export class ProdutoPage {
     this._activatedRoute.params.subscribe((data: any) => {
       this._pk_produto = data['id'];
     });
+  }
+
+  decrement(){
+    if( this.count > 0)  {
+      this.count --;
+    }
+  }
+
+  increment() {
+    if (this.count < 10) {
+      this.count++;
+    }
   }
 
   ionViewWillEnter() {

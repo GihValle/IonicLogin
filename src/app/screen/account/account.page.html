@@ -1,43 +1,143 @@
-<ion-content class="ion-padding">
-  <h1>Welcome,</h1>
-  <h3>Sign up to continue!</h3>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="cabeca">
+      <ion-back-button
+        slot="start"
+        text="Voltar"
+        defaultHref="/home"
+      ></ion-back-button>
+      <img src="../../../assets/icon/logo.png" />
+      <ion-icon
+        slot="end"
+        size="large"
+        name="cart-outline"
+        routerLink="/cart"
+      ></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
 
-  <form [formGroup]="formulario">
+<ion-content>
+  <div class="div-divison">
+    <div class="div-perfil">
+      <img src="assets/icon/user.png" alt="" />
+      <span>Fashion Frenzy</span>
+    </div>
 
-    <ion-list>
-      <ion-item>
-        <ion-input formControlName="nome" label="Nome" labelPlacement="stacked" placeholder="Informe seu nome"></ion-input>
-      </ion-item>
-    </ion-list>
+    <div class="div-container">
+      <h3>Perfil</h3>
 
-    <ion-list>
-      <ion-item>
-        <ion-input formControlName="cpf" label="CPF" labelPlacement="stacked" placeholder="00000000000"></ion-input>
-      </ion-item>
-    </ion-list>
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Dados Pessoais</ion-label>
+          </ion-item>
+          <div class="ion-padding roud" slot="content">
+            <form [formGroup]="formulario">
+              <ion-list>
+                <ion-item>
+                  <ion-input
+                    formControlName="nome"
+                    label="Nome"
+                    labelPlacement="floating"
+                    placeholder="Enter text"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    formControlName="cpf"
+                    label="Cpf"
+                    labelPlacement="floating"
+                    placeholder="Enter text"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    formControlName="nascimento"
+                    label="Data de Nascimento"
+                    type="date"
+                    labelPlacement="floating"
+                    placeholder="Enter text"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    formControlName="tel"
+                    label="Telefone"
+                    labelPlacement="floating"
+                    placeholder="Enter text"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    formControlName="endereco"
+                    label="Endereço"
+                    labelPlacement="floating"
+                    placeholder="Enter text"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    formControlName="email"
+                    label="Email"
+                    labelPlacement="floating"
+                    placeholder="Enter text"
+                  ></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input
+                    formControlName="senha"
+                    label="Senha"
+                    labelPlacement="floating"
+                    type="password"
+                    placeholder="Enter text"
+                  ></ion-input>
+                </ion-item>
 
-    <ion-list>
-      <ion-item>
-        <ion-input formControlName="tel" label="Telefone" labelPlacement="stacked" placeholder="(00) 00000-0000"></ion-input>
-      </ion-item>
-    </ion-list>
 
-    <ion-list>
-      <ion-item>
-        <ion-input formControlName="email" label="Email ID" labelPlacement="stacked" placeholder="Informe seu e-mail"></ion-input>
-      </ion-item>
-    </ion-list>
+                  <ion-button size="default">Salvar</ion-button>
 
-    <ion-list>
-      <ion-item>
-        <ion-input formControlName="senha" label="Password" labelPlacement="floating" placeholder="Informe sua senha" type="Password"></ion-input>
-      </ion-item>
-    </ion-list>
+              </ion-list>
+            </form>
+          </div>
+        </ion-accordion>
 
-    <app-button label="Cadastrar"></app-button>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>Pedidos</ion-label>
+          </ion-item>
+          <div class="ion-padding roud" slot="content">Second Content</div>
+        </ion-accordion>
 
-  </form>
+        <ion-accordion value="third">
+          <ion-item slot="header" color="light">
+            <ion-label>Compras Realizadas</ion-label>
+          </ion-item>
+          <div class="ion-padding roud" slot="content">Third Content</div>
+        </ion-accordion>
 
-  <p class="footer-text">I already have an account,<a routerLink="/register"> Sign in</a></p>
+        <ion-accordion value="for">
+          <ion-item slot="header" color="light">
+            <ion-label>Cupons</ion-label>
+          </ion-item>
+          <div class="ion-padding roud" slot="content">Third Content</div>
+        </ion-accordion>
 
+        <ion-accordion value="five">
+          <ion-item slot="header" color="light">
+            <ion-label>Central de ajuda</ion-label>
+          </ion-item>
+          <div class="ion-padding roud" slot="content">Third Content</div>
+        </ion-accordion>
+
+        <ion-accordion value="six">
+          <ion-item slot="header" color="light">
+            <ion-label>Sobre Nós</ion-label>
+          </ion-item>
+          <div class="ion-padding roud" slot="content">Third Content2</div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <button class="button-exit">Sair</button>
+    </div>
+  </div>
 </ion-content>

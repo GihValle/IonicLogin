@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { RegisterService } from 'src/app/services/register.service';
+import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
   selector: 'app-register',

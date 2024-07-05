@@ -20,16 +20,20 @@ const routes: Routes = [
     loadChildren: () => import('./screen/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'forgot',
-    loadChildren: () => import('./screen/forgot/forgot.module').then( m => m.ForgotPageModule)
-  },
-  {
     path: 'recover',
     loadChildren: () => import('./screen/recover/recover.module').then( m => m.RecoverPageModule)
   },
   {
+    path: 'recover-code',
+    loadChildren: () => import('./screen/recover-code/recover-code.module').then( m => m.RecoverCodePageModule)
+  },
+  {
+    path: 'recover-password',
+    loadChildren: () => import('./screen/recover-password/recover-password.module').then( m => m.RecoverPasswordPageModule)
+  },
+  {
     path: 'initial',
-    loadChildren: () => import('./screen/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'produto/:id',
@@ -39,6 +43,28 @@ const routes: Routes = [
     path: 'account',
     loadChildren: () => import('./screen/account/account.module').then( m => m.AccountPageModule)
   },
+  {
+    path: 'favorite',
+    loadChildren: () => import('./screen/favorite/favorite.module').then( m => m.FavoritePageModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./screen/cart/cart.module').then( m => m.CartPageModule)
+  },  {
+    path: 'principal',
+    loadChildren: () => import('./screen/principal/principal.module').then( m => m.PrincipalPageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./screen/notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'subcategorie',
+    loadChildren: () => import('./screen/subcategorie/subcategorie.module').then( m => m.SubcategoriePageModule)
+  },
+
+
+
 ];
 
 @NgModule({

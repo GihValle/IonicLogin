@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { FingerprintAIO } from '@awesome-cordova-plugins/fingerprint-aio/ngx';
 import { AlertController, NavController } from '@ionic/angular';
 import { DatabaseService } from 'src/app/services/core/database.service';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -34,11 +34,6 @@ export class LoginPage {
     this.navCtrl = navCtrl;
   }
 
-  selectByCondition(){
-    this._databaseService.book_email,
-    this._databaseService.book_password
-  }
-
   showRegister() {
     this.navCtrl.navigateForward('register');
   }
@@ -60,6 +55,7 @@ export class LoginPage {
         //Responsável por salvar no 'cookie' do navegador
         window.localStorage.setItem('autorizado', 'true'),
         window.localStorage.setItem('nome_cliente', data["clientes"]["nome"])
+        window.localStorage.setItem('pk_cliente', data["clientes"]["pk_cliente"])
 
         this.presentAlert("Bem-Vindo!", data["clientes"]["nome"] + ", login realizado com sucesso!")
         this._router.navigate(['/home'])
